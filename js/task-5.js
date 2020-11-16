@@ -4,7 +4,7 @@
 // <h1>Привет, <span id="name-output">незнакомец</span>!</h1>
 
 const inputRef = document.querySelector('input#name-input');
-console.log(inputRef);
+// console.log(inputRef);
 
 const nameLabelRef = document.querySelector('span#name-output')
 

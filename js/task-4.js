@@ -14,7 +14,7 @@ let counterValue = 0;
 
 // Поиск элемента
 const currentValueRef = document.querySelector('#value');
-console.log(currentValueRef);
+// console.log(currentValueRef);
 
 const decrementBtnRef = document.querySelector('[data-action="decrement"]');
 

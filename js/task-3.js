@@ -31,7 +31,7 @@ const createGallery = img => {
    // class into li
   elmOfGallery.classList.add('js__gallery__element')
 
-  console.log(elmOfGallery);
+  // console.log(elmOfGallery);
 
 // img
   const imgOfGallery = document.createElement('img');

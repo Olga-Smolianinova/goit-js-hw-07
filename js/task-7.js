@@ -9,7 +9,7 @@ const inputRef = document.querySelector('input#font-size-control');
 // console.log(inputRef.value)
 
 const textRef = document.querySelector('span#text')
-console.log(textRef.style.fontSize);
+// console.log(textRef.style.fontSize);
 
 
 inputRef.addEventListener('input', event => {
