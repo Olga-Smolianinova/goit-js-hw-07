@@ -3,11 +3,14 @@
 // <input type="text" placeholder="Ваше имя?" id="name-input" />
 // <h1>Привет, <span id="name-output">незнакомец</span>!</h1>
 
-const inputRef = document.querySelector('input#name-input');
-// console.log(inputRef);
+const inputRef = document.querySelector("input#name-input");
 
-const nameLabelRef = document.querySelector('span#name-output')
+const nameLabelRef = document.querySelector("span#name-output");
 
-inputRef.addEventListener('input', (event) => {
-    nameLabelRef.textContent = event.target.value;
-});
+inputRef.addEventListener("input", handleInputChange);
+
+function handleInputChange(event) {
+  nameLabelRef.textContent = event.target.value
+    ? event.target.value
+    : "незнакомец";
+}

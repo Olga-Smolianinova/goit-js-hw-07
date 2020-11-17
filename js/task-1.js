@@ -8,37 +8,44 @@
 // Категория: Животные
 // Количество элементов: 4
 
-//1 Пока оставляю это решение
-const catagoriesRef = document.querySelector('#categories')
+//  Способ 1. Решение через querySelector("#categories");
+const categoriesRef = document.querySelector("#categories");
+console.log(`В списке ${categoriesRef.children.length} категории`);
 
-// console.log(catagoriesRef)
-// console.dir(catagoriesRef)
+categoriesRef.childNodes.forEach((elm) => {
+  // первый элемент при переборе это пустой #text; прописываем шаг, что если при переборе встречает elm=0 то return, следовательно firstElementChild будет будет след.элемент - (h2).
+  if (elm.childNodes.length === 0) {
+    return;
+  }
+  console.log(`Категория: ${elm.firstElementChild.textContent}`);
 
-console.log(`В списке ${catagoriesRef.children.length} категории`)
+  console.log(`Количество элементов: ${elm.lastElementChild.children.length}`);
+});
 
-// 2
+// Способ 2. Решение через querySelector(".item");
 
-console.log(`Категория: ${catagoriesRef.firstElementChild.children[0].textContent}`);
+// const categoriesRef = document.querySelectorAll(".item");
 
-console.log(`Количество элементов: ${catagoriesRef.firstElementChild.children[1].children.length}`);
+// console.log(`В списке ${categoriesRef.length} категории`);
 
-// через функцию (недоработано)
-//1
-// const categoriesRef = document.querySelector('#categories')
-// console.log(`В списке ${categoriesRef.children.length} категории`)
+// categoriesRef.forEach((elm) => {
+//   console.log(`Категория: ${elm.firstElementChild.textContent}`);
 
-// console.log(categoriesRef)
-// console.dir(categoriesRef)
+//   console.log(`Количество элементов: ${elm.lastElementChild.children.length}`);
+// });
 
-// // 2
-// const headingCollection = categoriesRef.childNodes
-// console.log(headingCollection);
+// Способ 3.  Достучаться черех index элемента.
+// const catagoriesRef = document.querySelector("#categories");
 
-// const headingRef = headingCollection.forEach (elm => {
-//     console.log(headingCollection)
+// // console.log(catagoriesRef)
+// // console.dir(catagoriesRef)
 
-// })
+// console.log(`В списке ${catagoriesRef.children.length} категории`);
 
+// console.log(
+//   `Категория: ${catagoriesRef.firstElementChild.children[0].textContent}`
+// );
 
-
-
+// console.log(
+//   `Количество элементов: ${catagoriesRef.firstElementChild.children[1].children.length}`
+// );

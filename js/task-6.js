@@ -23,15 +23,27 @@
 //   border-color: #f44336;
 // }
 
-const inputRef = document.querySelector('#validation-input');
+const inputRef = document.querySelector("#validation-input");
 // console.dir(inputRef);
 // console.log(inputRef);
 
 // console.log(inputRef.value.length);
 // console.log(Number(inputRef.getAttribute('data-length')));
 
-inputRef.addEventListener('blur', handleInputBlur)
+inputRef.addEventListener("blur", handleInputBlur);
 
-function handleInputBlur (event){
-inputRef.value.length>=Number(inputRef.getAttribute('data-length'))?inputRef.classList.add('valid')||inputRef.classList.remove('invalid'): inputRef.classList.add('invalid')||inputRef.classList.remove('valid');
-};
+function handleInputBlur(event) {
+  //   console.log(event.target.value.length);
+  //   console.log(Number(event.target.getAttribute("data-length")));
+
+  if (
+    event.target.value.length ===
+    Number(event.target.getAttribute("data-length"))
+  ) {
+    inputRef.classList.add("valid");
+    inputRef.classList.remove("invalid");
+  } else {
+    inputRef.classList.add("invalid");
+    inputRef.classList.remove("valid");
+  }
+}
